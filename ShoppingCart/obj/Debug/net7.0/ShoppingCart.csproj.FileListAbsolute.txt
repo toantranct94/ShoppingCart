@@ -1,0 +1,15 @@
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/bin/Debug/net7.0/ShoppingCart
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/bin/Debug/net7.0/ShoppingCart.deps.json
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/bin/Debug/net7.0/ShoppingCart.runtimeconfig.json
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/bin/Debug/net7.0/ShoppingCart.dll
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/bin/Debug/net7.0/ShoppingCart.pdb
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/obj/Debug/net7.0/ShoppingCart.csproj.AssemblyReference.cache
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/obj/Debug/net7.0/ShoppingCart.GeneratedMSBuildEditorConfig.editorconfig
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/obj/Debug/net7.0/ShoppingCart.AssemblyInfoInputs.cache
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/obj/Debug/net7.0/ShoppingCart.AssemblyInfo.cs
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/obj/Debug/net7.0/ShoppingCart.csproj.CoreCompileInputs.cache
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/obj/Debug/net7.0/ShoppingCart.dll
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/obj/Debug/net7.0/refint/ShoppingCart.dll
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/obj/Debug/net7.0/ShoppingCart.pdb
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/obj/Debug/net7.0/ShoppingCart.genruntimeconfig.cache
+/home/toan/repo/donet/ShoppingCart/ShoppingCart/obj/Debug/net7.0/ref/ShoppingCart.dll
