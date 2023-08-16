@@ -14,5 +14,5 @@ dotnet run --project ShoppingCart/ShoppingCart.csproj
 # Test
 
 ```
-dotnet test ShoppingCart.Test/ShoppingCart.Test.csproj
+dotnet test ShoppingCart.Tests/ShoppingCart.Tests.csproj
 ```
