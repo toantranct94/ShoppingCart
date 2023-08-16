@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ao1k1GBLajY7iuLIsmnsPY0KDjFvoIHjK6yTt3//nqBUiLpCf+IuEvO6kfBMwsN7kdZPaQ8hcTzdHpZlbGTMtw==",
+  "dgSpecHash": "I2dE3x9IV+BD5Dj1sBQuZhQzFe5F+HOOcEqZ1pUVq6LH3uxsZ2lBMFM2liIm4C/gFWBdAykToRmv2jn0UnEKJw==",
   "success": true,
-  "projectFilePath": "/home/toan/repo/donet/ShoppingCart/ShoppingCart/ShoppingCart.csproj",
+  "projectFilePath": "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart/ShoppingCart.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -23,13 +23,11 @@ namespace ShoppingCart.Domain
             {
                 throw new ArgumentNullException(nameof(Product));
             }
-                
 
             if (quantity <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(quantity));
             }
-                
 
             var item = CartItems.FirstOrDefault(
                 x => x.Product.Id == product.Id);
@@ -81,14 +79,17 @@ namespace ShoppingCart.Domain
         {
             var builder = new StringBuilder();
 
+            var headers = $"{"Title", -15} {"Quantity", 15} {"Unit Price", 15} {"Total Price", 15}";
+            builder.AppendLine(headers);
+
             foreach (var cartItem in CartItems)
             {
-                var formattedLine = $"{cartItem.Product.Title,-20} {cartItem.Quantity,5} {cartItem.UnitPrice:F2} {cartItem.TotalPrice:F2}";
+                var formattedLine = $"{cartItem.Product.Title, -15} {cartItem.Quantity, 15} {cartItem.UnitPrice, 15} {cartItem.TotalPrice, 15}";
                 builder.AppendLine(formattedLine);
             }
 
             builder.AppendLine();
-            builder.AppendLine($"{"Total", -20}{" :", 5} {CalculateTotalPrice():F2} TL");
+            builder.AppendLine($"{"Total", -15} {"", 15} {"", 15} {CalculateTotalPrice(), 15}");
 
             return builder.ToString();
         }

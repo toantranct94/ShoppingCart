@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/toan/repo/donet/ShoppingCart/ShoppingCart.Test/ShoppingCart.Test.csproj": {}
+    "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart.Test/ShoppingCart.Test.csproj": {}
   },
   "projects": {
-    "/home/toan/repo/donet/ShoppingCart/ShoppingCart.Test/ShoppingCart.Test.csproj": {
+    "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart.Test/ShoppingCart.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/toan/repo/donet/ShoppingCart/ShoppingCart.Test/ShoppingCart.Test.csproj",
+        "projectUniqueName": "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart.Test/ShoppingCart.Test.csproj",
         "projectName": "ShoppingCart.Test",
-        "projectPath": "/home/toan/repo/donet/ShoppingCart/ShoppingCart.Test/ShoppingCart.Test.csproj",
-        "packagesPath": "/home/toan/.nuget/packages/",
-        "outputPath": "/home/toan/repo/donet/ShoppingCart/ShoppingCart.Test/obj/",
+        "projectPath": "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart.Test/ShoppingCart.Test.csproj",
+        "packagesPath": "/Users/toantran/.nuget/packages/",
+        "outputPath": "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart.Test/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/toan/.nuget/NuGet/NuGet.Config"
+          "/Users/toantran/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/toan/repo/donet/ShoppingCart/ShoppingCart/ShoppingCart.csproj": {
-                "projectPath": "/home/toan/repo/donet/ShoppingCart/ShoppingCart/ShoppingCart.csproj"
+              "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart/ShoppingCart.csproj": {
+                "projectPath": "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart/ShoppingCart.csproj"
               }
             }
           }
@@ -75,21 +75,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/toantran/.vscode-dotnet-sdk/.dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/toan/repo/donet/ShoppingCart/ShoppingCart/ShoppingCart.csproj": {
+    "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart/ShoppingCart.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/toan/repo/donet/ShoppingCart/ShoppingCart/ShoppingCart.csproj",
+        "projectUniqueName": "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart/ShoppingCart.csproj",
         "projectName": "ShoppingCart",
-        "projectPath": "/home/toan/repo/donet/ShoppingCart/ShoppingCart/ShoppingCart.csproj",
-        "packagesPath": "/home/toan/.nuget/packages/",
-        "outputPath": "/home/toan/repo/donet/ShoppingCart/ShoppingCart/obj/",
+        "projectPath": "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart/ShoppingCart.csproj",
+        "packagesPath": "/Users/toantran/.nuget/packages/",
+        "outputPath": "/Users/toantran/Personal/works/side-projects/test/shopping-cart/ShoppingCart/ShoppingCart/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/toan/.nuget/NuGet/NuGet.Config"
+          "/Users/toantran/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -128,7 +128,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/toantran/.vscode-dotnet-sdk/.dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
