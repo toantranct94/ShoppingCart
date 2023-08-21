@@ -7,12 +7,6 @@ namespace ShoppingCart.Domain
         public string Title { get; protected set; }
         public decimal Price { get; protected set; }
 
-
-        protected Product()
-        {
-
-        }
-
         public Product(string title, decimal price)
         {
             if (string.IsNullOrEmpty(title))

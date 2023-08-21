@@ -5,12 +5,14 @@ namespace ShoppingCart.Domain
 {
     public class Cart : AggregateRoot
     {
-        protected virtual List<CartItem> CartItems { get; set; }
+        public IReadOnlyList<CartItem> CartItems => _cartItems;
+
+        private List<CartItem> _cartItems;
 
         public Cart()
         {
             Id = Guid.NewGuid();
-            CartItems = new List<CartItem>();
+            _cartItems = new List<CartItem>();
         }
 
         public virtual void Add(Product product, int quantity)
@@ -25,16 +27,16 @@ namespace ShoppingCart.Domain
                 throw new ArgumentOutOfRangeException(nameof(quantity));
             }
 
-            var item = CartItems.FirstOrDefault(
+            var item = _cartItems.FirstOrDefault(
                 x => x.Product.Id == product.Id);
 
             if (item != null)
             {
-                CartItems.Remove(item);
+                _cartItems.Remove(item);
             }
 
             item = new CartItem(product, quantity);
-            CartItems.Add(item);
+            _cartItems.Add(item);
         }
 
         public virtual void Remove(Product product)
@@ -44,7 +46,7 @@ namespace ShoppingCart.Domain
                 throw new ArgumentNullException(nameof(Product));
             }
 
-            var findItem = CartItems.FirstOrDefault(
+            var findItem = _cartItems.FirstOrDefault(
                 x => x.Product.Id == product.Id);
 
             if (findItem == null)
@@ -53,22 +55,22 @@ namespace ShoppingCart.Domain
                     $"{product.Title} was not found in your cart.");
             }
 
-            CartItems.Remove(findItem);
+            _cartItems.Remove(findItem);
         }
 
         public virtual void Clear()
         {
-            CartItems.Clear();
+            _cartItems.Clear();
         }
 
         public virtual decimal CalculateTotalPrice()
         {
-            return CartItems.Sum(x => x.TotalPrice);
+            return _cartItems.Sum(x => x.TotalPrice);
         }
 
         public int GetNumberOfProducts()
         {
-            return CartItems.Count;
+            return _cartItems.Count;
         }
 
         public string Print()
@@ -78,7 +80,7 @@ namespace ShoppingCart.Domain
             var headers = $"{"Title", -15} {"Quantity", 15} {"Unit Price", 15} {"Total Price", 15}";
             builder.AppendLine(headers);
 
-            foreach (var cartItem in CartItems)
+            foreach (var cartItem in _cartItems)
             {
                 var formattedLine = $"{cartItem.Product.Title, -15} {cartItem.Quantity, 15} {cartItem.UnitPrice, 15} {cartItem.TotalPrice, 15}";
                 builder.AppendLine(formattedLine);

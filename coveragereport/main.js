@@ -221,11 +221,11 @@ var assemblies = [
   {
     "name": "ShoppingCart",
     "classes": [
-      { "name": "Program", "rp": "ShoppingCart_Program.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 13, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "ShoppingCart.Domain.Cart", "rp": "ShoppingCart_Cart.html", "cl": 36, "ucl": 20, "cal": 56, "tl": 97, "cb": 7, "tb": 12, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "ShoppingCart.Domain.CartItem", "rp": "ShoppingCart_CartItem.html", "cl": 10, "ucl": 5, "cal": 15, "tl": 29, "cb": 2, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "Program", "rp": "ShoppingCart_Program.html", "cl": 0, "ucl": 5, "cal": 5, "tl": 16, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "ShoppingCart.Domain.Cart", "rp": "ShoppingCart_Cart.html", "cl": 56, "ucl": 0, "cal": 56, "tl": 95, "cb": 12, "tb": 12, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "ShoppingCart.Domain.CartItem", "rp": "ShoppingCart_CartItem.html", "cl": 11, "ucl": 4, "cal": 15, "tl": 29, "cb": 2, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "ShoppingCart.Domain.Common.Entity", "rp": "ShoppingCart_Entity.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 9, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "ShoppingCart.Domain.Product", "rp": "ShoppingCart_Product.html", "cl": 14, "ucl": 3, "cal": 17, "tl": 33, "cb": 4, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "ShoppingCart.Domain.Product", "rp": "ShoppingCart_Product.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 27, "cb": 4, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
     ]},
 ];
 

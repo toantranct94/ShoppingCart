@@ -20,6 +20,24 @@ public class ShoppingCartTests
         Assert.AreEqual(1, cart.GetNumberOfProducts());
     }
 
+    [TestMethod]
+    public void ShoppingCart_AddExistProduct_ShouldUpdateQuantity()
+    {
+        // Arrange
+        Cart cart = new Cart();
+        int quantity = 1;
+        int newQuantity = 2;
+        Product product = new Product("Test Product", 10.00m);
+
+        // Act
+        cart.Add(product, quantity);
+        cart.Add(product, newQuantity);
+        var actualQuantity = cart.CartItems.First(c => c.Product.Id == product.Id).Quantity;
+
+        // Assert
+        Assert.AreEqual(newQuantity, actualQuantity);
+    }
+
 
     [TestMethod]
     public void ShoppingCart_RemoveProduct_ShouldDecreaseItemCount()
@@ -53,6 +71,18 @@ public class ShoppingCartTests
         // Act & Assert
         Assert.ThrowsException<ArgumentOutOfRangeException>(() => cart.Add(product, quantity));
     }
+
+    [TestMethod]
+    public void ShoppingCart_AddNullProduct_ArgumentNullExceptionThrown()
+    {
+        // Arrange
+        Cart cart = new Cart();
+        int quantity = 1;
+
+        // Act & Assert
+        Assert.ThrowsException<ArgumentNullException>(() => cart.Add(null, quantity));
+    }
+
 
     [TestMethod]
     public void ShoppingCart_CalculateTotalPrice_ShouldReturnCorrectTotal()
@@ -122,5 +152,31 @@ public class ShoppingCartTests
 
         // Act & Assert
         Assert.ThrowsException<ArgumentException>(() => cart.Remove(product));
+    }
+
+    [TestMethod]
+    public void ShoppingCart_RemoveNullProduct_ArgumentNullExceptionThrown()
+    {
+        // Arrange
+        Cart cart = new Cart();
+
+        // Act & Assert
+        Assert.ThrowsException<ArgumentNullException>(() => cart.Remove(null));
+    }
+
+    [TestMethod]
+    public void ShoppingCart_Print_ShouldReturnString()
+    {
+        // Arrange
+        Cart cart = new Cart();
+        int quantity = 1;
+        Product product = new Product("Test Product", 10.00m);
+
+        // Act
+        cart.Add(product, quantity);
+        var actualOutput = cart.Print();
+
+        // Assert
+        Assert.IsInstanceOfType(actualOutput, typeof(string));
     }
 }
