@@ -179,4 +179,47 @@ public class ShoppingCartTests
         // Assert
         Assert.IsInstanceOfType(actualOutput, typeof(string));
     }
+
+    [TestMethod]
+    public void ShoppingCart_AddDiscountForSameProdoct_ShouldDecreaseTotalPrice()
+    {
+        // Arrange
+        int quantity = 6;
+        Cart cart = new Cart();
+        Product jeans = new Product("Jeans", 20.00m);
+        Product shirt = new Product("Shirt", 10.00m);
+        Coupon coupon = new Coupon(3, "Jeans", CouponType.SingleProduct);
+
+        // Act
+        cart.Add(jeans, quantity);
+        cart.Add(shirt, 3);
+        cart.ApplyCoupon(coupon);
+
+        decimal totalPrice = cart.CalculateTotalPrice();
+
+        // Assert
+        Assert.AreEqual(110.00m, totalPrice);
+    }
+
+    [TestMethod]
+    public void ShoppingCart_AddDiscountForSetProdict_ShouldDecreaseTotalPrice()
+    {
+        // Arrange
+        int quantity = 2;
+        Cart cart = new Cart();
+        Product jeans = new Product("Jeans", 20.00m);
+        Product shirt = new Product("Shirt", 10.00m);
+        HashSet<string> productTitles = new HashSet<string>() { "Jeans", "Shirt" };
+        Coupon coupon = new Coupon(2, productTitles, CouponType.SetProduct);
+
+        // Act
+        cart.Add(jeans, quantity);
+        cart.Add(shirt, quantity);
+        cart.ApplyCoupon(coupon);
+
+        decimal totalPrice = cart.CalculateTotalPrice();
+
+        // Assert
+        Assert.AreEqual(45.00m, totalPrice);
+    }
 }

@@ -35,6 +35,7 @@ namespace ShoppingCart.Domain
             }
 
             item = new CartItem(product, quantity);
+
             _items.Add(item);
         }
 
@@ -64,7 +65,7 @@ namespace ShoppingCart.Domain
 
         public virtual decimal CalculateTotalPrice()
         {
-            return _items.Sum(x => x.TotalPrice);
+            return _items.Sum(x => x.TotalPriceAfterDisocunt);
         }
 
         public int GetNumberOfProducts()
@@ -89,6 +90,87 @@ namespace ShoppingCart.Domain
             builder.AppendLine($"{"Total", -15} {"", 15} {"", 15} {CalculateTotalPrice(), 15}");
 
             return builder.ToString();
+        }
+
+        public void ApplyCoupon(Coupon coupon)
+        {
+
+            if (coupon == null)
+            {
+                throw new ArgumentNullException(nameof(Coupon));
+            }
+
+            switch(coupon.CouponType)
+            {
+                case CouponType.SingleProduct:
+                    ApplySingleProductCoupon(coupon);
+                    break;
+                case CouponType.SetProduct:
+                    ApplySetProductCoupon(coupon);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(CouponType));
+            }
+        }
+
+        private void ApplySingleProductCoupon(Coupon coupon)
+        {
+            foreach (var item in _items)
+            {
+                if (item.Quantity >= coupon.MinQuantity
+                    && item.Product.Title.Equals(coupon.ProductTitle))
+                {
+                    decimal disocunt = GetDiscountByProduct(item);
+                    item.ApplyDiscount(disocunt);
+                }
+            }
+        }
+
+        private void ApplySetProductCoupon(Coupon coupon)
+        {
+            var products = _items
+                .GroupBy(c => c.Product.Title)
+                .ToList();
+
+            var productTitles = products.Select(c => c.Key).ToHashSet();
+
+            if (!coupon.SetProductTitles.SetEquals(productTitles))
+            {
+                return;
+            }
+
+            foreach (var item in _items)
+            {
+                if (item.Quantity >= coupon.MinQuantity)
+                {
+                    decimal disocunt = GetDiscountBySet(item);
+                    item.ApplyDiscount(disocunt);
+                }
+            }
+        }
+
+        private decimal GetDiscountBySet(CartItem cartItem)
+        {
+            switch (cartItem.Product.Title)
+            {
+                case "Jeans":
+                    return cartItem.Quantity / 2 * 10;
+                case "Shirt":
+                    return cartItem.Quantity / 2 * 5;
+                default:
+                    return 0;
+            }
+        }
+
+        private decimal GetDiscountByProduct(CartItem cartItem)
+        {
+            switch (cartItem.Product.Title)
+            {
+                case "Jeans":
+                    return cartItem.Quantity / 3 * cartItem.UnitPrice;
+                default:
+                    return 0;
+            }
         }
     }
 }

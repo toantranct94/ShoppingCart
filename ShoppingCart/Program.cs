@@ -16,11 +16,15 @@ var services = host.Services;
 
 var cart = services.GetRequiredService<Cart>();
 
-Product jeans = new Product("Jeans", 100.0m);
-Product tShirts = new Product("T-Shirts", 150.0m);
+Product jeans = new Product("Jeans", 20.00m);
+Product shirt = new Product("Shirt", 10.00m);
+HashSet<string> productTitles = new HashSet<string>() { "Jeans", "Shirt" };
+Coupon coupon = new Coupon(2, productTitles, CouponType.SetProduct);
+int quantity = 2;
 
-cart.Add(jeans, 3);
-cart.Add(tShirts, 1);
+cart.Add(jeans, quantity);
+cart.Add(shirt, quantity);
+cart.ApplyCoupon(coupon);
 
 Console.WriteLine(cart.Print());
 cart.Clear();

@@ -8,7 +8,8 @@ namespace ShoppingCart.Domain
         public int Quantity { get; protected set; }
         public decimal UnitPrice => Product.Price;
         public decimal TotalPrice => Product.Price * Quantity;
-
+        public decimal Discount { get; protected set; }
+        public decimal TotalPriceAfterDisocunt => Product.Price * Quantity - Discount;
 
         public CartItem(Product product, int quantity)
         {
@@ -24,6 +25,11 @@ namespace ShoppingCart.Domain
 
             Product = product;
             Quantity = quantity;
+        }
+
+        public void ApplyDiscount(decimal discount)
+        {
+            Discount = discount;
         }
     }
 }
