@@ -6,8 +6,7 @@ namespace ShoppingCart.Domain
     public class Cart : AggregateRoot
     {
         public IReadOnlyList<CartItem> Items => _items;
-
-        private List<CartItem> _items;
+        private List<CartItem> _items { get; set; }
 
         public Cart()
         {
