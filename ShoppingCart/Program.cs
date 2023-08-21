@@ -1,7 +1,20 @@
-﻿// See https://aka.ms/new-console-template for more information
-using ShoppingCart.Domain;
+﻿using ShoppingCart.Domain;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-Cart cart = new Cart();
+IHost host = CreateHostBuilder(args).Build();
+
+IHostBuilder CreateHostBuilder(string[] strings)
+{
+    return Host.CreateDefaultBuilder().ConfigureServices((_, services) =>
+    {
+        services.AddScoped<Cart>();
+    });
+}
+
+var services = host.Services;
+
+var cart = services.GetRequiredService<Cart>();
 
 Product jeans = new Product("Jeans", 100.0m);
 Product tShirts = new Product("T-Shirts", 150.0m);
