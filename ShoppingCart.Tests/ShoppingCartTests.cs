@@ -181,31 +181,39 @@ public class ShoppingCartTests
     }
 
     [TestMethod]
-    public void ShoppingCart_AddDiscountForSameProdoct_ShouldDecreaseTotalPrice()
+    [DataRow(3, 1, 50.00)]
+    [DataRow(6, 3, 110.00)]
+    public void ShoppingCart_AddDiscountForSameProdoct_ShouldDecreaseTotalPrice(
+        int jeansQuantity, int shirtsQuantity, double e
+    )
     {
         // Arrange
-        int quantity = 6;
+        decimal expectation = (decimal)e;
         Cart cart = new Cart();
         Product jeans = new Product("Jeans", 20.00m);
         Product shirt = new Product("Shirt", 10.00m);
         Coupon coupon = new Coupon(3, "Jeans", CouponType.SingleProduct);
 
         // Act
-        cart.Add(jeans, quantity);
-        cart.Add(shirt, 3);
+        cart.Add(jeans, jeansQuantity);
+        cart.Add(shirt, shirtsQuantity);
         cart.ApplyCoupon(coupon);
 
         decimal totalPrice = cart.CalculateTotalPrice();
 
         // Assert
-        Assert.AreEqual(110.00m, totalPrice);
+        Assert.AreEqual(expectation, totalPrice);
     }
 
     [TestMethod]
-    public void ShoppingCart_AddDiscountForSetProdict_ShouldDecreaseTotalPrice()
+    [DataRow(2, 45.00)]
+    [DataRow(4, 90.00)]
+    public void ShoppingCart_AddDiscountForSetProdict_ShouldDecreaseTotalPrice(
+        int quantity, double e
+    )
     {
         // Arrange
-        int quantity = 2;
+        decimal expectation = (decimal)e;
         Cart cart = new Cart();
         Product jeans = new Product("Jeans", 20.00m);
         Product shirt = new Product("Shirt", 10.00m);
@@ -220,6 +228,6 @@ public class ShoppingCartTests
         decimal totalPrice = cart.CalculateTotalPrice();
 
         // Assert
-        Assert.AreEqual(45.00m, totalPrice);
+        Assert.AreEqual(expectation, totalPrice);
     }
 }
