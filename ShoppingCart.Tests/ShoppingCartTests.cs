@@ -32,7 +32,7 @@ public class ShoppingCartTests
         // Act
         cart.Add(product, quantity);
         cart.Add(product, newQuantity);
-        var actualQuantity = cart.CartItems.First(c => c.Product.Id == product.Id).Quantity;
+        var actualQuantity = cart.Items.First(c => c.Product.Id == product.Id).Quantity;
 
         // Assert
         Assert.AreEqual(newQuantity, actualQuantity);
